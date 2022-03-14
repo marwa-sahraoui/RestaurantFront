@@ -19,7 +19,7 @@
   <div *ngIf="currentProduct">
     <h4>Product</h4>
     <div>
-      <label><strong>Id:</strong></label> {{ currentProduct.id }}
+      <label><strong>Id:</strong></label> <a href="{{this.router.url}}/id/{{currentProduct.id}}"> {{ currentProduct.id }} </a>
     </div>
     <div>
       <label><strong>Name:</strong></label> {{ currentProduct.name }}
@@ -37,7 +37,7 @@
   </div>
   <div *ngIf="!currentProduct">
     <br/>
-    <p>Please click on a Restaurant...</p>
+    <p>Please click on a Product...</p>
   </div>
 </div>
 

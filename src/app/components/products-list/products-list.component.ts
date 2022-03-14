@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Restaurant} from '../../model/restaurant.model';
 import {ProductService} from '../../services/product.service';
 import {Product} from '../../model/product';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-products-list',
@@ -16,7 +16,7 @@ export class ProductsListComponent implements OnInit {
   description = '';
   price = '';
   score = '';
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, public router: Router) { }
 
   ngOnInit(): void {
     this.retrieveProduct();
