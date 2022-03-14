@@ -1,0 +1,45 @@
+<div class="list row">
+  <div class="col-md-8">
+  </div>
+</div>
+<div class="col-md-6">
+  <h4>Clients List</h4>
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let client of clients; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveClient(client, i)"
+    >
+      {{ client.firstName}} {{ client.lastName}}
+    </li>
+  </ul>
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentClient">
+    <h4>Client</h4>
+    <div>
+      <label><strong>Id:</strong></label> <a href="{{this.router.url}}/id/{{currentClient.id}}"> {{ currentClient.id}} </a>
+    </div>
+    <div>
+      <label><strong>First name:</strong></label> {{ currentClient.firstName }}
+    </div>
+    <div>
+      <label><strong>Last name:</strong></label>
+      {{ currentClient.lastName }}
+    </div>
+    <div>
+      <label><strong>email:</strong></label> {{ currentClient.email }}
+    </div>
+    <div>
+      <label><strong>Paypal Id:</strong></label> {{ currentClient.paypalId }}
+    </div>
+  </div>
+  <div *ngIf="!currentClient">
+    <br/>
+    <p>Please click on a Client...</p>
+  </div>
+</div>
+
+
+

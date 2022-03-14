@@ -23,6 +23,14 @@
       </div>
     </div>
 
+    <div ngbDropdown class="d-inline-block col-md-1 col-xs-12">
+      <div id="dropdownClient" ngbDropdownToggle>Clients</div>
+      <div ngbDropdownMenu aria-labelledby="dropdownClient">
+        <button routerLink="clients" ngbDropdownItem>List</button>
+        <button routerLink="clients/add" ngbDropdownItem>Add new client</button>
+      </div>
+    </div>
+
   </nav>
   <div class="container mt-5">
     <router-outlet></router-outlet>

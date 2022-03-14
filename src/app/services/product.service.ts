@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {findAll} from '@angular/compiler-cli/ngcc/src/utils';
-import {any} from 'codelyzer/util/function';
 const baseUrl = 'http://localhost:8080/products';
 @Injectable({
   providedIn: 'root'

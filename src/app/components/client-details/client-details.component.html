@@ -1,0 +1,63 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentClient" class="edit-form">
+    <h4>Clients</h4>
+    <form>
+      <div class="form-group">
+        <label for="first name">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="first name"
+          [(ngModel)]="currentClient.firstName"
+          name="first name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="last name">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="last name"
+          [(ngModel)]="currentClient.lastName"
+          name="last name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          [(ngModel)]="currentClient.email"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="paypalId">Paypal Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="paypalId"
+          [(ngModel)]="currentClient.paypalId"
+          name="paypalId"
+        />
+      </div>
+    </form>
+    <button class="btn btn-danger mr-2" (click)="deleteClient()">
+      Delete
+    </button>
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="updateClient()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentClient">
+    <br />
+    <p>Cannot access this Client...</p>
+  </div>
+</div>
+
