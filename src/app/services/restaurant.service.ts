@@ -30,4 +30,7 @@ export class RestaurantService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
+  findByManagerId(managerId: any): Observable<any> {
+    return this.http.get(`${baseUrl}/manager/${managerId}`);
+  }
 }

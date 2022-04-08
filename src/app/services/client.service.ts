@@ -7,7 +7,9 @@ const baseUrl = 'http://localhost:8080/clients';
 })
 export class ClientService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
   findAll(): Observable<any> {
     return this.http.get(baseUrl);
   }

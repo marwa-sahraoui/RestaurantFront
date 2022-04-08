@@ -9,6 +9,15 @@ import {ClientsListComponent} from './components/clients-list/clients-list.compo
 import {AddClientComponent} from './components/add-client/add-client.component';
 import {ProductDetailsComponent} from './components/product-details/product-details.component';
 import {ClientDetailsComponent} from './components/client-details/client-details.component';
+import {ManagerDetailsComponent} from './components/manager-details/manager-details.component';
+import {AddManagerComponent} from './components/add-manager/add-manager.component';
+import {ManagersListComponent} from './components/managers-list/managers-list.component';
+import {ManagerRestaurantsListComponent} from './components/manager-restaurants-list/manager-restaurants-list.component';
+import {OrdersListComponent} from './components/orders-list/orders-list.component';
+import {AddOrderComponent} from './components/add-order/add-order.component';
+import {OrderDetailsComponent} from './components/order-details/order-details.component';
+import {ClientOrdersListComponent} from './components/client-orders-list/client-orders-list.component';
+import {OrderOrderItemsListComponent} from './components/order-order-items-list/order-order-items-list.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'restaurants', pathMatch: 'full'},
@@ -22,7 +31,16 @@ const routes: Routes = [
   {path: '', redirectTo: 'clients', pathMatch: 'full'},
   {path: 'clients', component: ClientsListComponent},
   {path: 'clients/add', component: AddClientComponent},
-  {path: 'clients/id/:id', component: ClientDetailsComponent}
+  {path: 'clients/id/:id', component: ClientDetailsComponent},
+  {path: 'managers', component: ManagersListComponent},
+  {path: 'managers/add', component: AddManagerComponent},
+  {path: 'managers/id/:id', component: ManagerDetailsComponent},
+  {path: 'restaurants/manager/:id', component: ManagerRestaurantsListComponent},
+  {path: 'orders', component: OrdersListComponent},
+  {path: 'orders/add', component: AddOrderComponent},
+  {path: 'orders/id/:id', component: OrderDetailsComponent},
+  {path: 'orders/clientId/:id', component: ClientOrdersListComponent},
+  {path: 'orders/:id/order-items', component: OrderOrderItemsListComponent}
 ];
 
 @NgModule({
