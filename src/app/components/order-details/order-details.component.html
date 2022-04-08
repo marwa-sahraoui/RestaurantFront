@@ -1,0 +1,58 @@
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentOrder" class="edit-form">
+    <h4>Order</h4>
+    <form>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentOrder.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="orderItems">OrderItems</label>
+        <a id="orderItems" href="/orders/{{currentOrder.id}}/order-items/"> Check Order Items </a>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input
+          disabled
+          type="text"
+          class="form-control"
+          id="amount"
+          [(ngModel)]="currentOrder.amount"
+          name="amount"
+        />
+      </div>
+      <div class="form-group">
+        <label for="created">Created Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="created"
+          [(ngModel)]="currentOrder.created"
+          name="created"
+        />
+      </div>
+    </form>
+    <button class="btn btn-danger mr-2" (click)="deleteOrder()">
+      Delete
+    </button>
+    <button
+      type="submit"
+      class="btn btn-success"
+      (click)="updateOrder()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentOrder">
+    <br />
+    <p>Cannot access this Order...</p>
+  </div>
+</div>
+

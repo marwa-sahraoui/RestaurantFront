@@ -1,0 +1,44 @@
+<div class="list row">
+  <div class="col-md-8">
+  </div>
+</div>
+<div class="col-md-6">
+  <h4>Orders List</h4>
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let order of orders; let i = index"
+      [class.active]="i == currentIndex"
+      (click)="setActiveOrder(order, i)"
+    >
+      {{ order.description}}
+    </li>
+  </ul>
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentOrder">
+    <h4>Details</h4>
+    <div>
+      <label><strong>Id:</strong></label> <a href="{{this.router.url}}/id/{{currentOrder.id}}"> {{ currentOrder.id}} </a>
+    </div>
+    <div>
+      <label><strong>Description:</strong></label> {{ currentOrder.description }}
+    </div>
+    <div>
+      <label><strong>orderItems:</strong></label>
+      <a href="{{this.router.url}}/{{currentOrder.id}}/order-items/"> Check Order Items </a>
+    </div>
+    <div>
+      <label><strong>amount:</strong></label> {{ currentOrder.amount }}
+    </div>
+  </div>
+  <div *ngIf="!currentOrder">
+    <br/>
+    <p>Please click on an Order...</p>
+  </div>
+</div>
+
+
+
+
+

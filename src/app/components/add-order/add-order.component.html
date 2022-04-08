@@ -1,0 +1,53 @@
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="order.description"
+          name="description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="orderItems">orderItems</label>
+        <input
+          class="form-control"
+          id="orderItems"
+          required
+          [(ngModel)]="order.orderItems"
+          name="orderItems"
+        />
+        <label for="amount">Amount</label>
+        <input
+          type="text"
+          class="form-control"
+          id="amount"
+          required
+          [(ngModel)]="order.amount"
+          name="amount"
+        />
+        <label for="created">Created Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="created"
+          required
+          [(ngModel)]="order.created"
+          name="created"
+        />
+      </div>
+      <button (click)="saveOrder()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newOrder()">Add</button>
+      <a class="btn btn-success" routerLink="/orders/">ListOrders</a>
+    </div>
+  </div>
+</div>
+
+
