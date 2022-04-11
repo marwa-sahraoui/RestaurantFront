@@ -23,6 +23,28 @@
       </div>
     </div>
 
+    <div ngbDropdown class="d-inline-block col-md-1 col-xs-12">
+      <div id="dropdownClient" ngbDropdownToggle>Clients</div>
+      <div ngbDropdownMenu aria-labelledby="dropdownClient">
+        <button routerLink="clients" ngbDropdownItem>List</button>
+        <button routerLink="clients/add" ngbDropdownItem>Add new client</button>
+      </div>
+    </div>
+
+    <div ngbDropdown class="d-inline-block col-md-1 col-xs-12">
+      <div id="dropdownManager" ngbDropdownToggle>Managers</div>
+      <div ngbDropdownMenu aria-labelledby="dropdownManager">
+        <button routerLink="managers" ngbDropdownItem>List</button>
+        <button routerLink="managers/add" ngbDropdownItem>Add new manager</button>
+      </div>
+    </div>
+    <div ngbDropdown class="d-inline-block col-md-1 col-xs-12">
+      <div id="dropdownOrder" ngbDropdownToggle>Orders</div>
+      <div ngbDropdownMenu aria-labelledby="dropdownOrder">
+        <button routerLink="orders" ngbDropdownItem>List</button>
+        <button routerLink="orders/add" ngbDropdownItem>Add new order</button>
+      </div>
+    </div>
   </nav>
   <div class="container mt-5">
     <router-outlet></router-outlet>
